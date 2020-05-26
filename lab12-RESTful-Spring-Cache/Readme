@@ -1,0 +1,17 @@
+@EnableCaching
+==========
+
+It enables Spring’s annotation-driven cache management capability.  
+
+Spring provides one concurrent hashmap as default cache, but we can override 
+CacheManager to register external cache providers as well easily.
+
+We can override specific cache behaviors in Spring boot by overriding the cache 
+provider specific settings.
+
+spring.cache.infinispan.config=infinispan.xml
+
+
+Test :
+http://localhost:8080/student/1
+http://localhost:8080/student/2

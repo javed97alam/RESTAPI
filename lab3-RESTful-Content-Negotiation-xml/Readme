@@ -1,0 +1,28 @@
+1. First try the request without specifying Headers -> Accept
+    & Headers -> Accept :  application/json
+Both will give json response
+
+2. Now try with Headers -> Accept : application/xml
+Error :  406 not acceptable
+
+3. Add the below dependency
+<dependency>
+		 <groupId>com.fasterxml.jackson.dataformat</groupId>
+         <artifactId>jackson-dataformat-xml</artifactId>
+  	</dependency>
+  	
+4. Now, try without giving Accept Header (default: application/json)
+json response will come
+
+5. Now, try with GET request,  Accept Header -> application/xml
+xml response will come
+
+6. Try with Post request 
+Body :    (XML application/xml)
+ <item>
+        <name>ok</name>
+        <location>hyderabad</location>
+    </item>
+ 
+ 
+

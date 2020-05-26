@@ -1,0 +1,40 @@
+step 1: Start uaa server
+
+> open a command prompt
+> run the below commands
+set SPRING_PROFILES_ACTIVE=default,hsqldb
+set CLOUD_FOUNDRY_CONFIG_PATH=C:\oauth\apache-tomcat-8.0.33\uaa
+> start startup.bat
+
+Note:  Observer the files : conf\server.xml; conf\tomcat-users.xml, uaa\uaa.yml
+
+
+step 2:  Start  lab3-security-cloud-gateway-oauth
+
+step 3:  Start  lab3-oauth-secured-service
+
+step 4:  
+
+check the jwt token keys:
+
+http://localhost:8090/uaa/token_keys
+
+To test the application
+
+http://localhost:8888/resource.
+
+Note: 
+username : user1
+password: password
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Ref : https://spring.io/blog/2019/08/16/securing-services-with-spring-cloud-gateway
+--------------------------------------------------------------------------------------

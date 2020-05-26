@@ -1,0 +1,26 @@
+Get all Employees
+================
+
+http://localhost:9090/employee/getall
+
+
+Get Employee by Id
+==================
+
+http://localhost:9090/employee/get/1
+
+Note:  The URI associated with the response is qualified as a self link.
+=========================================================================================
+Spring boot version : 2.2.6
+
+ResourceSupport is now RepresentationModel
+
+Resource is now EntityModel
+
+Resources is now CollectionModel
+
+PagedResources is now PagedModel
+
+
+ControllerLinkBuilder has been moved into server.mvc and deprecated to be replaced by WebMvcLinkBuilder.
+

@@ -1,0 +1,32 @@
+Test the application
+--------------------
+
+
+1. top level service (GET)
+http://localhost:8080
+
+2. to get people details (GET)
+http://localhost:8080/people
+
+3. to create a new person (POST)
+
+http://localhost:8080/people
+
+Headers 
+Content-Type: application/json
+
+Body
+{  "firstName" : "Venkata",  "lastName" : "Ramana" }
+
+4. To display all custom queries 
+
+http://localhost:8080/people/search
+
+
+5. To use the findByLastName query
+
+http://localhost:8080/people/search/findByLastName?name=Ramana
+
+
+
+

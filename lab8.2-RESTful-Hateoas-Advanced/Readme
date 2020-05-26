@@ -1,0 +1,19 @@
+Spring HATEOAS offers three abstractions for creating the URI – RepresentationModel, Link, and WebMvcLinkBuilder. We can use these to create
+ the metadata and associate it to the resource representation.
+
+
+
+Get all Customers
+================
+
+http://localhost:9090/customers
+
+Get all orders for a customer:
+==============================
+
+
+http://localhost:9090/customers/10A/orders
+
+
+
+Note:  The URI associated with the response is qualified as a self link.

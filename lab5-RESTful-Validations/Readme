@@ -1,0 +1,7 @@
+Method : POST
+Url : http://localhost:8080/customersWithStatus
+body :
+ {
+        "name": "r",
+        "location": "hyderabad"
+    }

@@ -1,0 +1,2 @@
+uid: bob
+userPassword: bobspassword

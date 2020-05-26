@@ -1,0 +1,70 @@
+Test the application
+--------------------
+
+
+1. top level service (GET)
+http://localhost:8080
+
+2. to get people details (GET)
+http://localhost:8080/people
+
+3. to create a new person (POST)
+
+http://localhost:8080/people
+
+Headers 
+Content-Type: application/json
+
+Body
+{  "firstName" : "Venkata",  "lastName" : "Ramana" }
+
+4. To display all custom queries 
+
+http://localhost:8080/people/search
+
+
+5. To use the findByLastName query
+
+http://localhost:8080/people/search/findByLastName?name=Ramana
+
+
+
+=================================================================================================
+
+After the Docket bean is defined, its select() method returns an instance of ApiSelectorBuilder, which 
+provides a way to control the endpoints exposed by Swagger.
+
+Predicates for selection of RequestHandlers can be configured with the help of RequestHandlerSelectors 
+and PathSelectors. Using any() for both will make documentation for your entire API available through Swagger.
+
+
+
+@Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+            	//Scanned controller Package
+                .apis(RequestHandlerSelectors.basePackage("demo.controller"))
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .paths(PathSelectors.any())
+                .build();
+    }
+    
+
+withClassAnnotation
+-------------------
+    
+@Api(value = "File Operation API", tags = "File Upload and Download")
+@RestController
+@RequestMapping("/file")
+public class FileController {
+    
+    
+withMethodAnnotation
+--------------------
+
+@ApiOperation(value = "File Download", notes = "File Download")
+@GetMapping("/download")
+public Result downLoadFile(@ApiParam(value = "Fill in files to download") String fileName, HttpServletResponse response){    

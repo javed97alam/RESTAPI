@@ -1,0 +1,14 @@
+The projection is then called as:
+http://localhost:8080/api/cities/1?projection=CityProjection
+
+findByNameAndCountryAllIgnoringCase:
+http://localhost:8080/api/cities/search/findByNameAndCountryAllIgnoringCase?name=Melbourne&country=Australia
+
+findByNameContainingAndCountryContainingAllIgnoringCase:
+http://localhost:8080/api/cities/search/findByNameContainingAndCountryContainingAllIgnoringCase?name=&country=UK
+
+
+Note:
+Containing -> findByFirstnameContaining … where x.firstname like ?1 (parameter bound wrapped in %)
+
+IgnoreCase -> findByFirstnameIgnoreCase -> … where UPPER(x.firstame) = UPPER(?1)

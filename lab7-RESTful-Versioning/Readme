@@ -1,0 +1,42 @@
+URI Versioning
+==============
+
+Basic approach to versioning is to create a completely different URI for the new service. Example implementation is shown below.
+
+Examples
+
+http://localhost:8080/v1/customer
+http://localhost:8080/v2/customer
+
+
+Request Parameter versioning
+============================
+
+Next approach to versioning is to use the request parameter to differentiate versions.
+
+Examples:
+
+http://localhost:8080/customer?version=1
+http://localhost:8080/customer?version=2
+
+(Custom) Headers versioning
+===========================
+
+The third approach to versioning is to use a Request Header to differentiate the versions.
+
+Examples:
+
+http://localhost:8080/customer     headers=[X-API-VERSION=1]
+http://localhost:8080/customer     headers=[X-API-VERSION=2]
+
+
+Media type versioning (“content negotiation” or “accept header”)
+======================================================================
+
+The last versioning approach is to use the Accept Header in the request.
+
+Examples:
+
+http://localhost:8080/customer     headers[Accept=application/vnd.company.app-v1+json]
+http://localhost:8080/customer     headers[Accept=application/vnd.company.app-v2+json]
+
